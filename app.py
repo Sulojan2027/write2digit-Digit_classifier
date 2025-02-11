@@ -35,4 +35,4 @@ def canvas():
         return render_template('drawing.html', response=str(e), canvasdata=canvas_data)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(os.getenv('PORT', 5000))
