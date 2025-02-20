@@ -10,21 +10,6 @@ from sklearn.metrics import classification_report
 
 X_train = X_train / 255
 x_test = x_test / 255
-
-
-# X_train_flatten = X_train.reshape(len(X_train), len(X_train[0])**2)
-# X_train_flatten.shape
-# x_test_flatten = x_test.reshape(len(x_test), len(x_test[0])**2)
-# x_test_flatten.shape
-
-
-# model = Sequential([
-#     Flatten(input_shape = (28, 28, )),
-#     Dense(100, input_shape = (784,), activation='relu'),
-#     Dense(10, activation='softmax')
-# ])
-
-
 model = Sequential()
 
 model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
@@ -48,12 +33,6 @@ model.compile(
 )
 
 model.fit(X_train, Y_train, epochs=10)
-
-# prediction_prob = model.predict(x_test)
-# prediction = np.array([np.argmax(pred) for pred in prediction_prob])
-
-# print(classification_report(y_test, prediction))
-
 model.save("model.h5")
 
 test = model.predict(x_test[0].reshape(1, 28, 28, 1))
