@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow import keras
 from keras import Sequential
-from keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, Dropout
+from keras.lay  ers import Dense, Conv2D, MaxPooling2D, Flatten, Dropout
 import numpy as np
 from keras.layers import Flatten
 from sklearn.metrics import classification_report
